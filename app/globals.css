@@ -1494,3 +1494,316 @@ blockquote strong {
     transition: none !important;
   }
 }
+/* Shared project journey: demo → source evidence → next lab. */
+.project-path {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 20px;
+}
+.project-path button {
+  padding: 13px 17px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 12px;
+  color: #a9b8cd;
+  text-align: left;
+}
+.project-path button[aria-pressed="true"] {
+  background: #24351d;
+  border-color: #618748;
+  color: var(--accent);
+}
+#experience-content:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+.simulation-banner strong {
+  font:
+    11px Arial,
+    sans-serif;
+  letter-spacing: 0;
+  display: block;
+  margin-bottom: 5px;
+}
+.simulation-banner span {
+  font-size: 11px;
+  line-height: 1.8;
+}
+.simulation-banner > svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.onboarding {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 23px 0 15px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #131b27;
+}
+.onboarding ol {
+  padding-left: 18px;
+  margin: 12px 0 0;
+  color: #b0bed1;
+  font-size: 12px;
+  line-height: 1.9;
+}
+.onboarding .text-button {
+  white-space: nowrap;
+}
+.deployment-inline {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+.deployment-inline strong {
+  font-weight: 500;
+  color: #ced9e9;
+}
+.deployment-inline button {
+  border: 0;
+  padding: 0;
+  margin-left: 12px;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+.implementation .deployment-context {
+  padding: 20px;
+  background: #182222;
+  border: 1px solid #3e5139;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+.deployment-context h2 {
+  margin: 12px 0;
+  font-size: 23px;
+}
+.deployment-context p,
+.engineering-notes p,
+.boundary-note p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #a6b7d0;
+  margin: 0;
+}
+.implementation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+.implementation h3 {
+  font-size: 15px;
+}
+.architecture-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: flow;
+}
+.architecture-list li {
+  counter-increment: flow;
+  position: relative;
+  padding: 13px 14px 13px 36px;
+  border-left: 1px solid #617fa4;
+  background: #172235;
+  margin-bottom: 7px;
+  font: 11px/1.8 monospace;
+  overflow-wrap: anywhere;
+}
+.architecture-list li:before {
+  content: counter(flow);
+  position: absolute;
+  left: 12px;
+  color: var(--accent);
+}
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px;
+}
+.stack-list span {
+  padding: 7px 9px;
+  border: 1px solid #37475e;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #b4c4dd;
+}
+.source-evidence {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 25px 0;
+}
+.source-evidence > div {
+  grid-column: 1/-1;
+}
+.source-evidence h3 {
+  margin-bottom: 8px;
+}
+.source-evidence a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--line);
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.boundary-note {
+  border-left: 2px solid var(--accent);
+  padding: 16px;
+  background: #15211666;
+}
+.boundary-note strong {
+  font-size: 13px;
+  color: var(--accent);
+}
+.boundary-note p {
+  margin-top: 10px;
+}
+.project-next {
+  margin: 28px 0 20px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.project-next strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.project-next p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.project-next .button {
+  flex-shrink: 0;
+}
+.engineering-notes h3 {
+  margin-top: 20px;
+}
+.engineering-notes h3:first-child {
+  margin-top: 15px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 740px) {
+  .project-path {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-path button {
+    padding: 12px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  .onboarding {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+  .onboarding ol {
+    font-size: 11px;
+  }
+  .implementation-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .source-evidence {
+    grid-template-columns: 1fr;
+  }
+  .project-next {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .project-next .button {
+    justify-content: center;
+  }
+  .deployment-context h2 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .implementation .button-row {
+    flex-wrap: wrap;
+  }
+  .deployment-inline button {
+    margin: 8px 0;
+  }
+  .architecture-canvas .node-row {
+    position: relative;
+  }
+  .cluster-label {
+    font-size: 8px;
+  }
+  .version {
+    font-size: 8px;
+  }
+}
+@media (max-width: 620px) {
+  .node-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .node-wrap,
+  .node-wrap:last-child {
+    width: 100%;
+    flex: auto;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .arch-node {
+    width: 100%;
+    height: 49px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 17px;
+    gap: 15px;
+  }
+  .arch-node strong {
+    font-size: 12px;
+  }
+  .arch-node small {
+    font-size: 9px;
+    margin-left: auto;
+  }
+  .connector {
+    transform: rotate(90deg);
+    width: 15px;
+    height: 15px;
+  }
+  .audit-node {
+    margin: 20px 0;
+  }
+  .canvas-legend {
+    flex-wrap: wrap;
+  }
+  .architecture-canvas {
+    padding: 37px 18px 20px;
+  }
+  .cluster-label {
+    font-size: 7px;
+    line-height: 1.7;
+  }
+}

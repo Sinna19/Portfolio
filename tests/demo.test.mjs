@@ -161,3 +161,21 @@ test("grader matches original any-required/no-forbidden semantics and normalizat
   );
   assert.equal(gradeReply(cases[2], "We can’t refund it.").passed, true);
 });
+
+test("every project connects browser simulation guidance to deployment status and pinned source evidence", async () => {
+  const { projectContext } = await import("../lib/project-context.ts");
+  assert.equal(projectContext.length, 3);
+  for (const p of projectContext) {
+    assert.equal(p.revision.length, 40);
+    assert.ok(p.steps.length === 3 && p.evidence.length >= 3);
+    assert.ok(p.architecture.length >= 4 && p.stack.length >= 5);
+    assert.ok(p.boundary.length > 60 && p.tradeoff.length > 60);
+    assert.doesNotMatch(
+      JSON.stringify(p),
+      /https?:\/\/(?!github\.com)|\b\d{1,3}(?:\.\d{1,3}){3}\b|sslip\.io|umk_|gsk_/,
+    );
+  }
+  assert.match(projectContext[0].status, /k3s on an Azure VM/);
+  assert.match(projectContext[1].status, /Streamlit.*unverified/);
+  assert.match(projectContext[2].status, /Not deployed/);
+});

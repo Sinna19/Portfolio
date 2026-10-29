@@ -31,3 +31,11 @@ Education is user-confirmed: B.Tech in Computer Science and Engineering, graduat
 Branch: `feat/interactive-product-demos`. No merge or production deployment without owner approval.
 
 Screenshots are in [docs/screenshots](docs/screenshots). Tests are in `tests/demo.test.mjs`; fixture data and pure model logic are in `lib/`. UI is in `app/page.tsx` and styles in `app/globals.css`.
+
+## Project context and guided exploration
+
+Each project offers **Try the Interactive Demo** and **Explore the Real Implementation** in the same workspace. Three-step onboarding and next-project navigation provide a short guided tour. Implementation views include pinned source links, real architecture and stack, engineering decisions, challenges, tradeoffs, and deployment status.
+
+- Gateway: real deployment is k3s on an Azure VM; the portfolio is an isolated simulation with no infrastructure links.
+- Aster & Row: actual application uses Streamlit; no public URL could be verified, so no hosted-app link is shown.
+- Eval Harness: not deployed; real implementation available as source, with its simulation running locally in the portfolio.
