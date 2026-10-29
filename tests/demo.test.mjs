@@ -179,3 +179,17 @@ test("every project connects browser simulation guidance to deployment status an
   assert.match(projectContext[1].status, /Streamlit.*unverified/);
   assert.match(projectContext[2].status, /Not deployed/);
 });
+
+test("shareable project routes distinguish demo and implementation and reject unknown slugs", async () => {
+  const { labHref, labIndex, labSlugs } = await import("../lib/lab-routes.ts");
+  assert.equal(labSlugs.length, 3);
+  for (let i = 0; i < 3; i++) {
+    assert.equal(labIndex(labSlugs[i]), i);
+    assert.equal(labHref(i), `/labs/${labSlugs[i]}`);
+    assert.equal(
+      labHref(i, "implementation"),
+      `/labs/${labSlugs[i]}?view=implementation`,
+    );
+  }
+  assert.equal(labIndex("unknown"), -1);
+});

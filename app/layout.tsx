@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
-  title: "Aayushi Sinha — Engineering Playground",
+  title: "Aayushi Sinha — AI Engineering & Systems",
   description:
-    "Interactive engineering labs by Aayushi Sinha. Explore MCP routing, support-agent boundaries, and AI evaluation with source-grounded local demonstrations.",
+    "Aayushi Sinha builds AI systems, agent infrastructure, and reliable software. Explore her projects, engineering decisions, and interactive browser-based labs.",
 };
 export default function RootLayout({
   children,
