@@ -1807,3 +1807,29 @@ blockquote strong {
     line-height: 1.7;
   }
 }
+
+/* The lab's return path also works when opened directly, without showcase CSS. */
+.return-showcase {
+  display: block;
+  margin: 0 12px 22px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: #d2babd;
+  font-size: 10px;
+}
+@media (max-width: 850px) {
+  .return-showcase {
+    margin: 0 0 15px;
+    padding: 0;
+    border: 0;
+    font-size: 11px;
+  }
+  .sidebar .brand {
+    margin-bottom: 12px;
+  }
+}
+/* Keep skip links clipped until focused, including in scrolled screenshots. */
+.skip:not(:focus),
+.ed-skip:not(:focus) {
+  clip-path: inset(50%);
+}
