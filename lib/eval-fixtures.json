@@ -1,0 +1,47 @@
+[
+  {
+    "id": "normal_2",
+    "category": "normal",
+    "input": "How long does standard shipping take?",
+    "must_contain": [
+      "5-7",
+      "5 to 7",
+      "five to seven"
+    ],
+    "must_not_contain": [],
+    "needs_judge": false
+  },
+  {
+    "id": "normal_3",
+    "category": "normal",
+    "input": "Do you offer express shipping?",
+    "must_contain": [
+      "1-2",
+      "1 to 2",
+      "one to two"
+    ],
+    "must_not_contain": [],
+    "needs_judge": false
+  },
+  {
+    "id": "edge_final_sale",
+    "category": "edge",
+    "input": "I bought a clearance-sale speaker 5 days ago and want a refund.",
+    "must_contain": [
+      "final sale",
+      "not eligible",
+      "cannot",
+      "can't",
+      "unable",
+      "no refund",
+      "non-refundable",
+      "not refundable"
+    ],
+    "must_not_contain": [
+      "here is your refund",
+      "refund has been processed",
+      "proof of purchase"
+    ],
+    "needs_judge": false
+  }
+]

@@ -1,0 +1,243 @@
+{
+  "ORD-1001": {
+    "found": true,
+    "order_id": "ORD-1001",
+    "status": "pending",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Ridge Daypack",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-15T11:45:00Z",
+    "status_updated_at": "2026-08-15T11:45:00Z",
+    "customer_safe_message": "We received the order and it has not entered processing yet.",
+    "requires_handoff": false
+  },
+  "ORD-1002": {
+    "found": true,
+    "order_id": "ORD-1002",
+    "status": "processing",
+    "membership_tier": "trailplus",
+    "items": [
+      {
+        "name": "Compression Cube Set",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-15T09:20:00Z",
+    "status_updated_at": "2026-08-15T10:05:00Z",
+    "estimated_delivery": "2026-08-21",
+    "customer_safe_message": "The order is being prepared for shipment.",
+    "requires_handoff": false
+  },
+  "ORD-1003": {
+    "found": true,
+    "order_id": "ORD-1003",
+    "status": "shipped",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Breeze Tumbler",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-10T16:10:00Z",
+    "status_updated_at": "2026-08-13T18:25:00Z",
+    "shipped_at": "2026-08-13T18:25:00Z",
+    "carrier": "USPS",
+    "tracking_number": "94001118995600001003",
+    "estimated_delivery": "2026-08-18",
+    "customer_safe_message": "The order is in transit with USPS.",
+    "requires_handoff": false
+  },
+  "ORD-1004": {
+    "found": true,
+    "order_id": "ORD-1004",
+    "status": "cancelled",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Atlas Weekender",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-09T13:30:00Z",
+    "status_updated_at": "2026-08-09T13:48:00Z",
+    "carrier": "UPS",
+    "tracking_number": "1ZAR100400000004",
+    "customer_safe_message": "The order was cancelled and will not be shipped.",
+    "eta_suppressed_reason": "Order is cancelled; any prior delivery estimate is stale and must not be reported.",
+    "requires_handoff": false
+  },
+  "ORD-1005": {
+    "found": true,
+    "order_id": "ORD-1005",
+    "status": "delayed",
+    "membership_tier": "trailplus",
+    "items": [
+      {
+        "name": "Ridge Daypack",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-06T12:40:00Z",
+    "status_updated_at": "2026-08-14T07:10:00Z",
+    "shipped_at": "2026-08-08T17:00:00Z",
+    "carrier": "FedEx",
+    "tracking_number": "7810000001005",
+    "estimated_delivery": "2026-08-20",
+    "customer_safe_message": "The carrier reported a weather delay. The current estimated delivery date is August 20, 2026.",
+    "requires_handoff": false
+  },
+  "ORD-1006": {
+    "found": true,
+    "order_id": "ORD-1006",
+    "status": "delivered",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Compression Cube Set",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-02T14:22:00Z",
+    "status_updated_at": "2026-08-10T19:05:00Z",
+    "shipped_at": "2026-08-04T16:30:00Z",
+    "delivered_at": "2026-08-10T19:05:00Z",
+    "carrier": "UPS",
+    "tracking_number": "1ZAR100600000006",
+    "estimated_delivery": "2026-08-10",
+    "customer_safe_message": "The order was delivered on August 10, 2026.",
+    "requires_handoff": false
+  },
+  "ORD-1007": {
+    "found": true,
+    "order_id": "ORD-1007",
+    "status": "shipped",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Atlas Weekender",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-11T15:05:00Z",
+    "status_updated_at": "2026-08-14T20:40:00Z",
+    "shipped_at": "2026-08-14T20:40:00Z",
+    "carrier": "UPS",
+    "tracking_number": "1ZAR100700000007",
+    "estimated_delivery": "2026-08-22",
+    "customer_safe_message": "The order is in transit with UPS and is currently estimated to arrive on August 22, 2026.",
+    "requires_handoff": false
+  },
+  "ORD-1008": {
+    "found": true,
+    "order_id": "ORD-1008",
+    "status": "returned",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Breeze Tumbler",
+        "quantity": 2,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-07-20T10:15:00Z",
+    "status_updated_at": "2026-08-12T15:30:00Z",
+    "carrier": "USPS",
+    "tracking_number": "94001118995600001008",
+    "customer_safe_message": "The return was received and processed.",
+    "eta_suppressed_reason": "Order is returned; any prior delivery estimate is stale and must not be reported.",
+    "requires_handoff": false
+  },
+  "ORD-1009": {
+    "found": true,
+    "order_id": "ORD-1009",
+    "status": "delivered",
+    "membership_tier": "trailplus",
+    "items": [
+      {
+        "name": "Ridge Daypack",
+        "quantity": 1,
+        "final_sale": true
+      }
+    ],
+    "placed_at": "2026-08-01T09:05:00Z",
+    "status_updated_at": "2026-08-07T16:42:00Z",
+    "shipped_at": "2026-08-03T13:10:00Z",
+    "delivered_at": "2026-08-07T16:42:00Z",
+    "carrier": "FedEx",
+    "tracking_number": "7810000001009",
+    "estimated_delivery": "2026-08-07",
+    "customer_safe_message": "The order was delivered on August 7, 2026.",
+    "requires_handoff": false
+  },
+  "ORD-1010": {
+    "found": true,
+    "order_id": "ORD-1010",
+    "status": "exception",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Atlas Weekender",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-05T18:55:00Z",
+    "status_updated_at": "2026-08-14T09:00:00Z",
+    "shipped_at": "2026-08-07T10:20:00Z",
+    "carrier": "UPS",
+    "tracking_number": "1ZAR101000000010",
+    "customer_safe_message": "The shipment has an exception that requires support review.",
+    "requires_handoff": true,
+    "handoff_reason": "Order is in an exception state and requires support review."
+  },
+  "ORD-1011": {
+    "found": true,
+    "order_id": "ORD-1011",
+    "status": "shipped",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Breeze Tumbler",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-12T08:45:00Z",
+    "status_updated_at": "2026-08-14T21:15:00Z",
+    "shipped_at": "2026-08-14T21:15:00Z",
+    "carrier": "Canada Post",
+    "tracking_number": "AR1011CA00001",
+    "customer_safe_message": "The order has shipped with Canada Post. A delivery estimate is not currently available.",
+    "eta_suppressed_reason": "Order has shipped but no delivery estimate is available; do not calculate or invent one.",
+    "requires_handoff": false
+  },
+  "ORD-1012": {
+    "found": true,
+    "order_id": "ORD-1012",
+    "status": "processing",
+    "membership_tier": "standard",
+    "items": [
+      {
+        "name": "Compression Cube Set",
+        "quantity": 1,
+        "final_sale": false
+      }
+    ],
+    "placed_at": "2026-08-14T19:25:00Z",
+    "status_updated_at": "2026-08-15T07:30:00Z",
+    "customer_safe_message": "The order is being prepared for shipment. A delivery estimate is not yet available.",
+    "requires_handoff": false
+  }
+}
