@@ -1,16 +1,17 @@
 .editorial {
-  --paper: #f6f1e7;
-  --ink: #352a28;
-  --wine: #743545;
-  --rose: #ad7b7e;
-  --edge: #d9cebf;
-  --sub: #756b64;
-  --accent: #743545;
+  --paper: #f8e5b2;
+  --ink: #432717;
+  --wine: #920c50;
+  --rose: #a3476b;
+  --edge: #c8a66a;
+  --sub: #765541;
+  --accent: #920c50;
   color: var(--ink);
   background: var(--paper);
   min-height: 100vh;
   font:
-    14px/1.7 Arial,
+    18px/1.7 var(--font-interface),
+    Arial,
     Helvetica,
     sans-serif;
 }
@@ -18,7 +19,7 @@
   box-sizing: border-box;
 }
 .editorial ::selection {
-  background: #743545;
+  background: #920c50;
   color: #fff9ee;
 }
 .editorial a:hover {
@@ -51,12 +52,13 @@
   align-items: center;
   gap: 20px;
   color: var(--ink);
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 600;
 }
 .ed-brand > span {
   font:
-    bold 35px Georgia,
+    bold 35px var(--font-editorial-serif),
+    Georgia,
     serif;
   letter-spacing: -5px;
   display: flex;
@@ -64,13 +66,17 @@
   color: var(--wine);
 }
 .ed-brand > span > span {
-  font: 22px Georgia;
+  font:
+    22px var(--font-editorial-serif),
+    Georgia;
   letter-spacing: 0;
   margin-left: 12px;
 }
 .ed-brand small {
   display: block;
-  font: 8px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1.5px;
   margin-top: 5px;
   color: var(--sub);
@@ -79,7 +85,7 @@
   display: flex;
   align-items: center;
   gap: 29px;
-  font-size: 11px;
+  font-size: 16px;
 }
 .ed-header nav a {
   display: flex;
@@ -104,7 +110,9 @@
   background-size: 38px 38px;
 }
 .ed-kicker {
-  font: 9px/1.8 monospace;
+  font:
+    12px/1.8 var(--font-code),
+    monospace;
   letter-spacing: 1.4px;
   color: var(--wine);
 }
@@ -118,7 +126,8 @@
 }
 .ed-hero h1 {
   font:
-    normal clamp(48px, 5.3vw, 79px)/1.06 Georgia,
+    normal clamp(48px, 5.3vw, 79px)/1.06 var(--font-editorial-serif),
+    Georgia,
     "Times New Roman",
     serif;
   letter-spacing: -3px;
@@ -129,7 +138,7 @@
   color: var(--wine);
 }
 .hero-intro > p {
-  font-size: 14px;
+  font-size: 18px;
   color: var(--sub);
   max-width: 475px;
   line-height: 1.95;
@@ -149,7 +158,7 @@
   border: 1px solid #baaaa1;
   border-radius: 4px;
   padding: 13px 17px;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.6;
   color: var(--ink);
@@ -165,7 +174,7 @@
 }
 .ed-button:hover {
   border-color: var(--wine);
-  background: #eadecf;
+  background: #f0d799;
 }
 .hero-socials {
   display: flex;
@@ -174,7 +183,7 @@
   gap: 23px;
   margin-top: 31px;
   color: var(--sub);
-  font-size: 9px;
+  font-size: 12px;
 }
 .hero-socials a {
   display: flex;
@@ -182,13 +191,15 @@
   align-items: center;
 }
 .hero-socials > span {
-  font: 8px/1.8 monospace;
+  font:
+    12px/1.8 var(--font-code),
+    monospace;
   letter-spacing: 0.5px;
   width: 100%;
 }
 .hero-art {
   position: relative;
-  background: #faf7ef;
+  background: #fff7e4;
   border: 1px solid #cebdaf;
   border-radius: 7px;
   box-shadow: 12px 15px 0 #dcd2c22b;
@@ -196,7 +207,9 @@
   overflow: hidden;
 }
 .field-label-ed {
-  font: 8px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1.3px;
   padding: 20px 23px;
   border-bottom: 1px solid var(--edge);
@@ -243,24 +256,28 @@
   height: 111px;
   border: 1px solid #9d6270;
   border-radius: 50%;
-  background: #f2e6df;
+  background: #f6dfb0;
   z-index: 1;
 }
 .orbit-center > span {
-  font: italic 54px Georgia;
+  font:
+    italic 54px var(--font-editorial-serif),
+    Georgia;
   color: var(--wine);
   letter-spacing: -5px;
   padding-right: 6px;
 }
 .orbit-center small {
-  font: 5px monospace;
-  color: #8b6567;
+  font:
+    12px var(--font-code),
+    monospace;
+  color: var(--sub);
   letter-spacing: 0.8px;
   margin-top: 4px;
 }
 .orbit-tag {
   position: absolute;
-  background: #faf7f0;
+  background: #fff7e4;
   box-shadow: 0 3px 12px #7a4f3910;
   border: 1px solid #d1bdb5;
   border-radius: 4px;
@@ -268,8 +285,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font: 8px monospace;
-  color: #865560;
+  font:
+    12px var(--font-code),
+    monospace;
+  color: var(--sub);
   z-index: 2;
 }
 .tag-build {
@@ -289,24 +308,30 @@
   border-top: 1px solid var(--edge);
 }
 .field-note > span {
-  font: 7px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1.2px;
   color: var(--sub);
 }
 .field-note p {
-  font: 23px/1.5 Georgia;
+  font:
+    23px/1.5 var(--font-editorial-serif),
+    Georgia;
   margin: 13px 0 0;
   letter-spacing: -0.5px;
 }
 .field-footer {
   padding: 13px 23px;
   border-top: 1px solid var(--edge);
-  font: 7px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #927774;
+  color: var(--sub);
 }
 .ed-index {
   margin: 0 64px;
@@ -315,7 +340,9 @@
   padding: 19px 0;
   display: flex;
   justify-content: space-between;
-  font: 8px/1.7 monospace;
+  font:
+    12px/1.7 var(--font-code),
+    monospace;
   letter-spacing: 1px;
   color: var(--sub);
 }
@@ -331,13 +358,14 @@
 }
 .editorial h2 {
   font:
-    normal 44px/1.14 Georgia,
+    normal 44px/1.14 var(--font-editorial-serif),
+    Georgia,
     serif;
   letter-spacing: -1.3px;
   margin: 15px 0 0;
 }
 .ed-section-title > p {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.9;
   color: var(--sub);
   margin: 0 0 2px;
@@ -355,18 +383,21 @@
 }
 .product-overview > h3 {
   font:
-    normal 42px/1.15 Georgia,
+    normal 42px/1.15 var(--font-editorial-serif),
+    Georgia,
     serif;
   letter-spacing: -1.5px;
   margin: 19px 0 11px;
 }
 .product-overview > h4 {
-  font: normal 19px/1.5 Georgia;
+  font:
+    normal 19px/1.5 var(--font-editorial-serif),
+    Georgia;
   margin: 0 0 23px;
   color: var(--wine);
 }
 .product-overview > p {
-  font-size: 12px;
+  font-size: 17px;
   color: var(--sub);
   line-height: 1.95;
   margin: 0 0 16px;
@@ -381,7 +412,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  font-size: 11px;
+  font-size: 16px;
   line-height: 2.3;
 }
 .product-overview li svg {
@@ -398,21 +429,23 @@
   border: 1px solid #d6c6bc;
   border-radius: 3px;
   padding: 5px 8px;
-  font: 8px monospace;
-  color: #7f5e60;
-  background: #f2e9de;
+  font:
+    12px var(--font-code),
+    monospace;
+  color: var(--sub);
+  background: #fff7e4;
 }
 .product-status {
   padding: 14px 0;
   border-top: 1px solid var(--edge);
   border-bottom: 1px solid var(--edge);
-  font-size: 10px;
+  font-size: 15px;
 }
 .product-status strong {
   font-weight: 500;
 }
 .product-status p {
-  font-size: 10px;
+  font-size: 15px;
   color: var(--sub);
   margin: 5px 0 0 12px;
   line-height: 1.8;
@@ -422,7 +455,7 @@
   margin-top: 23px;
 }
 .product-overview .ed-button {
-  font-size: 9px;
+  font-size: 12px;
   padding: 11px 12px;
   gap: 8px;
 }
@@ -430,7 +463,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 20px;
   color: var(--wine);
 }
@@ -440,7 +473,7 @@
   border: 1px solid #cfb7b2;
   border-radius: 6px;
   overflow: hidden;
-  background: radial-gradient(#9873722b 0.7px, transparent 0.7px), #efe3dc;
+  background: radial-gradient(#9873722b 0.7px, transparent 0.7px), #f7dfa6;
   background-size:
     14px 14px,
     auto;
@@ -450,8 +483,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #80535e;
-  font: 7px monospace;
+  color: var(--sub);
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1px;
 }
 .route-illustration {
@@ -470,26 +505,28 @@
   padding: 12px;
   border: 1px solid #bc959b;
   border-radius: 6px;
-  background: #f9f1e9;
+  background: #fff7e4;
   min-height: 80px;
   width: 88px;
-  font-size: 8px;
+  font-size: 12px;
   color: var(--wine);
 }
 .route-illustration i {
   font-style: normal;
-  color: #ad858a;
+  color: var(--sub);
 }
 .route-illustration .route-center {
   width: 116px;
   min-height: 108px;
-  background: #763b48;
+  background: #920c50;
   color: #fff0e6;
 }
 .route-center small {
-  font: 6px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   white-space: nowrap;
-  color: #e7bfbb;
+  color: var(--sub);
 }
 .visual-note {
   display: flex;
@@ -497,19 +534,21 @@
   gap: 4px;
   max-width: 285px;
   margin: 0 auto 44px;
-  font: 6px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 0.5px;
   padding: 10px 13px;
-  background: #f8ede6;
+  background: #fff7e4;
   border: 1px solid #d7bdba;
   border-radius: 3px;
-  color: #87525a;
+  color: var(--sub);
 }
 .visual-note b {
   margin-left: auto;
   font-weight: 400;
-  color: #943948;
-  font-size: 8px;
+  color: var(--sub);
+  font-size: 12px;
 }
 .illustration-caption {
   position: absolute;
@@ -519,96 +558,110 @@
   padding: 11px 15px;
   border-top: 1px solid #cfb7b2;
   text-align: center;
-  font: 6px/1.8 monospace;
+  font:
+    12px/1.8 var(--font-code),
+    monospace;
   letter-spacing: 0.6px;
-  color: #986e71;
-  background: #f5eae2;
+  color: var(--sub);
+  background: #fff7e4;
 }
 .visual-1 {
-  background-color: #e6e8df;
+  background-color: #f5e6bc;
   border-color: #b7bcab;
 }
 .visual-1 .visual-meta {
-  color: #666f58;
+  color: var(--sub);
 }
 .source-sheet {
   position: relative;
   margin: 15px 35px 50px;
   padding: 22px 24px;
-  background: #faf8f0;
+  background: #fff7e4;
   transform: rotate(-2deg);
   border: 1px solid #bfc1ae;
   box-shadow: 5px 6px 0 #c9cdbd4d;
 }
 .source-sheet > span {
-  font: 7px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1px;
-  color: #7b8469;
+  color: var(--sub);
 }
 .source-sheet p {
-  font: 23px/1.45 Georgia;
+  font:
+    23px/1.45 var(--font-editorial-serif),
+    Georgia;
   margin: 15px 0;
-  color: #505e46;
+  color: var(--sub);
 }
 .source-sheet p em {
-  color: #6f7b5a;
+  color: var(--sub);
   font-size: 20px;
 }
 .source-sheet > div {
   display: flex;
   align-items: center;
   gap: 6px;
-  font: 6px monospace;
-  color: #7b8469;
+  font:
+    12px var(--font-code),
+    monospace;
+  color: var(--sub);
 }
 .safe-output {
   position: absolute;
   right: 23px;
   bottom: 48px;
-  background: #e9eee0;
+  background: #fff7e4;
   border: 1px solid #9fae8f;
   border-radius: 5px;
   padding: 9px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #58634b;
-  font: 9px monospace;
+  color: var(--sub);
+  font:
+    12px var(--font-code),
+    monospace;
   transform: rotate(3deg);
 }
 .safe-output small {
   display: block;
-  font-size: 6px;
-  color: #788669;
+  font-size: 12px;
+  color: var(--sub);
   margin-top: 5px;
 }
 .visual-1 .illustration-caption {
-  background: #edf0e6;
-  color: #707d63;
+  background: #fff7e4;
+  color: var(--sub);
   border-color: #bac2ad;
 }
 .visual-2 {
-  background-color: #e9e3e8;
+  background-color: #f6dfd8;
   border-color: #c4b3c1;
 }
 .eval-illustration {
   padding: 14px 30px 50px;
 }
 .eval-illustration > span {
-  font: 6px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1px;
-  color: #8d6a82;
+  color: var(--sub);
 }
 .eval-illustration blockquote {
   background: none;
   border: 0;
   padding: 0;
   margin: 17px 0;
-  color: #665364;
-  font: 25px/1.5 Georgia;
+  color: var(--sub);
+  font:
+    25px/1.5 var(--font-editorial-serif),
+    Georgia;
 }
 .eval-illustration blockquote em {
-  color: #885376;
+  color: var(--sub);
 }
 .eval-illustration > div {
   display: flex;
@@ -617,20 +670,24 @@
 }
 .eval-illustration b {
   padding: 7px 14px;
-  background: #e2e9d6;
+  background: #fff7e4;
   border: 1px solid #a7b193;
   border-radius: 4px;
-  color: #526344;
-  font: 9px monospace;
+  color: var(--sub);
+  font:
+    12px var(--font-code),
+    monospace;
 }
 .eval-illustration > div > span {
-  font: 8px/1.6 monospace;
-  color: #967c90;
+  font:
+    12px/1.6 var(--font-code),
+    monospace;
+  color: var(--sub);
 }
 .visual-2 .illustration-caption {
-  background: #eee8ed;
+  background: #fff7e4;
   border-color: #c4b3c1;
-  color: #967b8f;
+  color: var(--sub);
 }
 .engineering-detail {
   margin: 20px 0;
@@ -638,18 +695,22 @@
   border-left: 2px solid #b37e83;
 }
 .engineering-detail > span {
-  font: 7px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 0.7px;
-  color: #9d7376;
+  color: var(--sub);
 }
 .engineering-detail > p {
-  font: italic 16px/1.7 Georgia;
-  color: #7b6663;
+  font:
+    italic 16px/1.7 var(--font-editorial-serif),
+    Georgia;
+  color: var(--sub);
   margin: 9px 0;
 }
 .guided-demo {
   border: 1px solid #ccb8af;
-  background: #faf6ee;
+  background: #fff7e4;
   border-radius: 5px;
   overflow: hidden;
   padding: 19px 20px;
@@ -658,26 +719,30 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  font: 6px/1.7 monospace;
+  font:
+    12px/1.7 var(--font-code),
+    monospace;
   letter-spacing: 0.5px;
-  color: #936d70;
+  color: var(--sub);
 }
 .guided-demo h4 {
-  font: normal 20px/1.4 Georgia;
+  font:
+    normal 20px/1.4 var(--font-editorial-serif),
+    Georgia;
   color: var(--ink);
   margin: 16px 0 17px;
 }
 .guided-demo label {
-  font-size: 10px;
+  font-size: 15px;
   color: var(--sub);
   display: block;
   margin-bottom: 7px;
 }
 .guided-demo select {
   color: var(--ink);
-  background: #f7f0e5;
+  background: #fff7e4;
   border-color: #cbbab0;
-  font-size: 11px;
+  font-size: 16px;
 }
 .guided-actions {
   display: flex;
@@ -689,9 +754,9 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 10px;
+  font-size: 15px;
   padding: 10px 12px;
-  background: #ede0d8;
+  background: #f8e5b2;
   border: 1px solid #c5aaa5;
   border-radius: 3px;
   color: var(--wine);
@@ -703,20 +768,20 @@
 .guided-result {
   padding: 13px 14px;
   border: 1px dashed #d6c6ba;
-  background: #f3ece1;
+  background: #fff7e4;
   min-height: 66px;
-  color: #8a766d;
-  font-size: 10px;
+  color: var(--sub);
+  font-size: 15px;
   line-height: 1.8;
   border-radius: 3px;
 }
 .guided-result strong {
   color: var(--wine);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
 }
 .guided-result p {
-  font-size: 10px;
+  font-size: 15px;
   line-height: 1.8;
   margin: 5px 0 0;
   color: var(--sub);
@@ -725,22 +790,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font: 7px/1.9 monospace;
+  font:
+    12px/1.9 var(--font-code),
+    monospace;
   letter-spacing: 0.4px;
   color: var(--wine);
   margin-top: 15px;
 }
 .guided-reply {
-  font: italic 14px/1.6 Georgia;
-  color: #795d60;
-  background: #f1e5dd;
+  font:
+    italic 18px/1.6 var(--font-editorial-serif),
+    Georgia;
+  color: var(--sub);
+  background: #f8e5b2;
   padding: 12px;
 }
 .lab-invitation {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 70px;
-  background: #e9dfd4;
+  background: #f1d794;
   padding: 65px 64px;
   border-top: 1px solid #d9c7bc;
   border-bottom: 1px solid #d9c7bc;
@@ -749,7 +818,7 @@
   font-size: 40px;
 }
 .lab-invitation > div > p {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.9;
   color: var(--sub);
   max-width: 380px;
@@ -770,7 +839,9 @@
   align-items: center;
   gap: 12px;
   color: #90a2bc;
-  font: 8px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1.2px;
   border-bottom: 1px solid #2e3744;
   padding-bottom: 18px;
@@ -789,10 +860,12 @@
   gap: 16px;
   padding: 20px 0;
   border-bottom: 1px solid #29323e;
-  font-size: 12px;
+  font-size: 16px;
 }
 .lab-door > a > span {
-  font: 8px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   color: #647b9b;
 }
 .lab-door > a > svg {
@@ -804,7 +877,9 @@
 }
 .lab-door > p {
   color: #7f90a7;
-  font: 7px/1.8 monospace;
+  font:
+    12px/1.8 var(--font-code),
+    monospace;
   margin-bottom: 0;
 }
 .ed-about {
@@ -819,13 +894,15 @@
   font-size: 39px;
 }
 .ed-signature {
-  font: italic 27px Georgia;
+  font:
+    italic 27px var(--font-editorial-serif),
+    Georgia;
   color: var(--wine);
   margin-top: 32px;
 }
 .about-story > p,
 .about-continuation > p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 2;
   color: var(--sub);
   margin: 0 0 20px;
@@ -841,19 +918,21 @@
   margin-top: 30px;
 }
 .education-note > span {
-  font: 7px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1px;
-  color: #9c7c74;
+  color: var(--sub);
   display: block;
 }
 .education-note strong {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
   display: block;
   margin: 10px 0;
 }
 .education-note p {
-  font-size: 10px;
+  font-size: 15px;
   color: var(--sub);
   margin: 0;
 }
@@ -871,17 +950,21 @@
   padding-top: 20px;
 }
 .notes-grid > div > span {
-  font: 7px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 0.8px;
-  color: #9b6d73;
+  color: var(--sub);
 }
 .notes-grid h3 {
-  font: normal 28px/1.25 Georgia;
+  font:
+    normal 28px/1.25 var(--font-editorial-serif),
+    Georgia;
   color: var(--ink);
   margin: 19px 0;
 }
 .notes-grid p {
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.9;
   color: var(--sub);
 }
@@ -890,12 +973,12 @@
   gap: 15px;
   align-items: center;
   color: var(--wine);
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 18px;
 }
 .ed-contact {
   margin: 0 34px 30px;
-  background: #eee2da;
+  background: #fff7e4;
   border: 1px solid #d9c5bc;
   border-radius: 6px;
   padding: 60px 30px 60px;
@@ -908,7 +991,7 @@
   font-size: 47px;
 }
 .ed-contact > p {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.9;
   color: var(--sub);
   max-width: 380px;
@@ -918,8 +1001,10 @@
   position: absolute;
   right: 70px;
   top: 75px;
-  font: 140px Georgia;
-  color: #9b5f6b;
+  font:
+    140px var(--font-editorial-serif),
+    Georgia;
+  color: var(--sub);
   opacity: 0.6;
 }
 .ed-footer {
@@ -929,14 +1014,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 15px;
   border-top: 1px solid var(--edge);
 }
 .ed-footer small {
-  font: 6px monospace;
+  font:
+    12px var(--font-code),
+    monospace;
   letter-spacing: 1px;
   display: block;
-  color: #9e8579;
+  color: var(--sub);
   margin-top: 4px;
 }
 .ed-footer > a {
@@ -944,7 +1031,7 @@
   align-items: center;
   gap: 10px;
   color: var(--sub);
-  font-size: 9px;
+  font-size: 12px;
 }
 .ed-skip {
   position: fixed;
@@ -998,7 +1085,7 @@
   }
   .orbit-tag {
     padding: 8px;
-    font-size: 7px;
+    font-size: 12px;
   }
   .tag-build {
     left: 10px;
@@ -1014,7 +1101,7 @@
   }
   .ed-index {
     margin: 0 35px;
-    font-size: 7px;
+    font-size: 12px;
   }
   .ed-section {
     padding: 65px 35px;
@@ -1043,7 +1130,7 @@
     width: 96px;
   }
   .route-center small {
-    font-size: 5px;
+    font-size: 12px;
   }
   .lab-invitation {
     padding: 50px 35px;
@@ -1063,7 +1150,7 @@
     padding: 25px 35px;
   }
   .guided-heading {
-    font-size: 6px;
+    font-size: 12px;
   }
   .guided-demo {
     padding: 17px;
@@ -1089,7 +1176,7 @@
     width: 100%;
     justify-content: space-between;
     gap: 10px;
-    font-size: 10px;
+    font-size: 15px;
   }
   .header-github {
     margin-left: auto;
@@ -1105,18 +1192,18 @@
     line-height: 1.1;
   }
   .hero-intro > p {
-    font-size: 13px;
+    font-size: 17px;
     max-width: 520px;
   }
   .ed-kicker {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 0.9px;
   }
   .ed-actions {
     gap: 10px;
   }
   .ed-button {
-    font-size: 10px;
+    font-size: 15px;
     gap: 10px;
     padding: 12px 14px;
   }
@@ -1146,7 +1233,7 @@
   }
   .ed-index {
     margin: 0 22px;
-    font-size: 6px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     gap: 14px;
     align-items: center;
@@ -1167,7 +1254,7 @@
   }
   .ed-section-title > p {
     margin-top: 20px;
-    font-size: 11px;
+    font-size: 16px;
   }
   .product-module {
     grid-template-columns: 1fr;
@@ -1191,7 +1278,7 @@
     flex-direction: row;
   }
   .product-overview .ed-button {
-    font-size: 9px;
+    font-size: 12px;
     padding: 11px 12px;
   }
   .product-tech {
@@ -1213,29 +1300,29 @@
     padding: 20px;
   }
   .guided-heading {
-    font-size: 7px;
+    font-size: 12px;
   }
   .guided-demo h4 {
     font-size: 22px;
   }
   .guided-demo > a {
-    font-size: 8px;
+    font-size: 12px;
   }
   .guided-result {
-    font-size: 11px;
+    font-size: 16px;
     min-height: 70px;
   }
   .guided-result p {
-    font-size: 11px;
+    font-size: 16px;
   }
   .guided-demo label {
-    font-size: 11px;
+    font-size: 16px;
   }
   .guided-actions > button {
-    font-size: 11px;
+    font-size: 16px;
   }
   .guided-demo select {
-    font-size: 12px;
+    font-size: 17px;
     height: 42px;
   }
   .lab-invitation {
@@ -1269,11 +1356,11 @@
     margin: 15px 0;
   }
   .notes-grid p {
-    font-size: 12px;
+    font-size: 17px;
     max-width: 500px;
   }
   .notes-grid a {
-    font-size: 11px;
+    font-size: 16px;
   }
   .ed-contact {
     margin: 0 13px 20px;
@@ -1299,19 +1386,19 @@
 }
 @media (max-width: 360px) {
   .ed-button {
-    font-size: 9px;
+    font-size: 12px;
   }
   .ed-kicker {
-    font-size: 7px;
+    font-size: 12px;
   }
   .ed-hero h1 {
     font-size: 43px;
   }
   .ed-brand {
-    font-size: 11px;
+    font-size: 16px;
   }
   .guided-heading {
-    font-size: 6px;
+    font-size: 12px;
   }
   .route-illustration {
     gap: 7px;
@@ -1324,7 +1411,7 @@
   }
   .visual-note {
     max-width: 245px;
-    font-size: 5px;
+    font-size: 12px;
   }
   .source-sheet {
     margin-left: 22px;
@@ -1337,7 +1424,7 @@
     gap: 18px;
   }
   .ed-header nav {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1384,20 +1471,23 @@
   margin-top: 25px;
 }
 .about-companion h3 {
-  font: 9px/1.8 monospace;
+  font:
+    12px/1.8 var(--font-code),
+    monospace;
   letter-spacing: 1.2px;
   color: var(--wine);
   margin: 0 0 10px;
 }
 .about-companion p {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 2;
   color: var(--sub);
   margin: 0;
 }
 .about-companion .about-approach {
   font:
-    21px/1.6 Georgia,
+    21px/1.6 var(--font-editorial-serif),
+    Georgia,
     serif;
   letter-spacing: -0.3px;
   color: var(--wine);
@@ -1415,7 +1505,7 @@
   min-height: 44px;
   list-style: none;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 17px;
   color: var(--wine);
   padding: 10px 0;
 }
@@ -1440,7 +1530,9 @@
   display: inline;
 }
 .about-disclosure-mark {
-  font: 18px monospace;
+  font:
+    18px var(--font-code),
+    monospace;
 }
 .about-more[open] .about-disclosure-mark {
   font-size: 0;
@@ -1476,7 +1568,7 @@
   }
   .about-story > p,
   .about-continuation > p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.95;
   }
   .about-story > p:first-child {
@@ -1484,3 +1576,324 @@
     line-height: 1.85;
   }
 }
+
+/* Honey & Burgundy: readability refinements, existing composition retained. */
+.ed-hero h1 {
+  font-size: clamp(64px, 5.5vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+}
+.editorial h2 {
+  font-size: clamp(40px, 3.5vw, 56px);
+  line-height: 1.17;
+}
+.product-overview > h3 {
+  font-size: clamp(32px, 3.2vw, 44px);
+}
+.hero-intro > p,
+.product-overview > p,
+.about-story > p,
+.about-continuation > p,
+.about-story > p:first-child,
+.about-companion p,
+.ed-contact > p,
+.lab-invitation > div > p,
+.notes-grid p {
+  font-size: clamp(17px, 1.3vw, 18px);
+  line-height: 1.85;
+}
+.hero-intro > p {
+  max-width: 570px;
+}
+.product-overview > p {
+  max-width: 520px;
+}
+.ed-header nav,
+.ed-button,
+.product-overview .ed-button {
+  font-size: 15px;
+}
+.product-overview li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 8px 0;
+  align-items: flex-start;
+}
+.product-overview li svg {
+  margin-top: 7px;
+}
+.ed-kicker,
+.product-tech > span,
+.product-status,
+.ed-source,
+.hero-socials,
+.hero-socials > span {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.product-status p {
+  font-size: 14px;
+}
+.hero-orbit {
+  height: 310px;
+}
+.orbit-center small {
+  max-width: 100px;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 10px;
+}
+.orbit-tag {
+  font-size: 12px;
+}
+.hero-socials {
+  gap: 18px;
+}
+.ed-index {
+  gap: 20px;
+  line-height: 1.8;
+}
+.visual-note {
+  max-width: 90%;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.product-visual {
+  min-height: 340px;
+}
+.route-illustration {
+  padding-bottom: 22px;
+}
+.route-illustration > span {
+  width: 92px;
+  min-height: 100px;
+  font-size: 13px;
+  text-align: center;
+}
+.route-illustration .route-center {
+  width: 125px;
+  min-height: 140px;
+}
+.route-center small {
+  font-size: 12px;
+  white-space: normal;
+  line-height: 1.6;
+}
+.route-illustration .route-center,
+.route-center small {
+  color: #fff7e4;
+}
+.source-sheet {
+  margin-bottom: 100px;
+}
+.source-sheet > div {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.illustration-caption {
+  position: relative;
+  margin-top: 20px;
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+.safe-output {
+  bottom: 70px;
+}
+.visual-meta,
+.guided-heading {
+  flex-wrap: wrap;
+  line-height: 1.8;
+}
+.guided-demo h4 {
+  font-size: 24px;
+}
+.guided-result,
+.guided-result p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.guided-result strong {
+  font-size: 17px;
+}
+.guided-demo label,
+.guided-actions > button,
+.guided-demo select {
+  font-size: 15px;
+}
+.guided-demo select {
+  height: auto;
+  min-height: 44px;
+}
+.guided-demo > a {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.about-more summary {
+  font-size: 16px;
+  min-width: 145px;
+}
+.education-note > span {
+  color: var(--sub);
+  font-size: 12px;
+}
+.education-note strong {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.education-note p {
+  font-size: 15px;
+}
+.ed-footer small,
+.ed-footer > a {
+  color: var(--sub);
+  font-size: 12px;
+}
+@media (max-width: 1100px) {
+  .ed-header {
+    gap: 20px;
+  }
+  .ed-header nav {
+    gap: 18px;
+  }
+  .ed-header {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .ed-brand {
+    gap: 12px;
+  }
+  .ed-brand > div {
+    font-size: 15px;
+  }
+  .ed-brand small {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+  }
+  .ed-hero {
+    gap: 35px;
+  }
+  .product-overview .ed-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .product-overview .ed-button {
+    align-self: stretch;
+  }
+}
+@media (max-width: 760px) {
+  .ed-hero h1 {
+    font-size: clamp(44px, 8.2vw, 64px);
+    letter-spacing: -1.7px;
+  }
+  .editorial h2,
+  .ed-about h2 {
+    font-size: clamp(36px, 7vw, 44px);
+  }
+  .ed-header nav {
+    gap: 12px 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .ed-header nav a {
+    font-size: 15px;
+  }
+  .ed-index {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .ed-actions {
+    align-items: stretch;
+  }
+  .ed-button {
+    font-size: 15px;
+  }
+  .product-overview .ed-actions {
+    flex-direction: column;
+  }
+  .product-overview .ed-button {
+    align-self: stretch;
+  }
+  .product-module {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .route-illustration {
+    gap: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .route-illustration > span {
+    min-width: 0;
+    width: 27%;
+    font-size: 12px;
+    padding: 9px 4px;
+  }
+  .route-illustration .route-center {
+    width: 34%;
+    font-size: 13px;
+  }
+  .route-center small {
+    font-size: 10px;
+  }
+  .hero-art {
+    transform: none;
+  }
+  .orbit-tag {
+    font-size: 11px;
+    padding: 8px;
+  }
+  .tag-ground {
+    right: 8px;
+  }
+  .tag-build {
+    left: 10px;
+  }
+  .tag-test {
+    left: 20px;
+  }
+  .about-companion .about-approach {
+    font-size: 24px;
+  }
+  .guided-heading {
+    font-size: 12px;
+  }
+  .guided-demo > a {
+    font-size: 12px;
+  }
+  .ed-contact > p {
+    max-width: none;
+  }
+  .notes-grid a {
+    font-size: 15px;
+  }
+  .visual-meta {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+}
+/* Contrast for the embedded dark portal and outlined controls. */
+.lab-door > a > span,
+.lab-door > p {
+  color: #a5b5cc;
+  font-size: 12px;
+}
+.editorial select,
+.ed-button:not(.filled),
+.guided-actions > button {
+  border-color: #96714b;
+}
+.orbit-center {
+  width: 138px;
+  height: 138px;
+}
+.orbit-center > span {
+  line-height: 1.1;
+}
+.orbit-center small {
+  max-width: 120px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.editorial .lab-invitation .lab-door > p { color:#a5b5cc; font-size:12px; }
