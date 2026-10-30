@@ -450,9 +450,14 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="contact" className="ed-contact">
+        <section
+          id="contact"
+          className="ed-contact"
+          aria-labelledby="contact-heading"
+          tabIndex={-1}
+        >
           <div className="ed-kicker">LET’S BUILD SOMETHING USEFUL</div>
-          <h2>
+          <h2 id="contact-heading">
             Good engineering starts
             <br />
             with a <em>conversation.</em>
@@ -466,7 +471,8 @@ export default function Home() {
               className="ed-button filled"
               href="https://www.linkedin.com/in/aayushi-sinha-43b0a0281/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Connect on LinkedIn (opens in a new tab)"
             >
               <Linkedin size={16} /> Connect on LinkedIn{" "}
               <ArrowUpRight size={14} />
@@ -475,7 +481,8 @@ export default function Home() {
               className="ed-button"
               href="https://github.com/Sinna19"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Explore GitHub (opens in a new tab)"
             >
               <Github size={16} /> Explore GitHub <ArrowUpRight size={14} />
             </a>
