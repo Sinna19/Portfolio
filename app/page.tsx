@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Github,
   Linkedin,
+  Mail,
   Network,
   ShieldCheck,
   BookOpen,
@@ -486,7 +487,14 @@ export default function Home() {
             >
               <Github size={16} /> Explore GitHub <ArrowUpRight size={14} />
             </a>
+            <a
+              className="ed-button"
+              href="mailto:sinhaaayushi19@gmail.com"
+            >
+              <Mail size={16} aria-hidden="true" /> Email Me
+            </a>
           </div>
+          <p>Mumbai, India</p>
           <span className="contact-flower" aria-hidden="true">
             ✷
           </span>

@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -18,6 +18,25 @@ export default function AboutSection() {
         <a className="ed-source" href="#contact">
           Get in touch <ArrowRight size={14} aria-hidden="true" />
         </a>
+        <div className="ed-actions">
+          <a
+            className="ed-button"
+            href="/AayushiSinha_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Aayushi Sinha’s résumé (PDF, opens in a new tab)"
+          >
+            View Résumé <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+          <a
+            className="ed-button"
+            href="/AayushiSinha_Resume.pdf"
+            download="AayushiSinha_Resume.pdf"
+            aria-label="Download Aayushi Sinha’s résumé (PDF)"
+          >
+            Download PDF <Download size={14} aria-hidden="true" />
+          </a>
+        </div>
       </div>
       <div className="about-story">
         <p>
