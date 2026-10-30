@@ -33,9 +33,9 @@ The guided experiences reuse the existing simulation engine, sanitized Python-ge
 - Aster & Row: Launch Live App opens the owner-provided public Streamlit deployment, separate from the browser simulation.
 - Eval Harness: not deployed; source code available, with a browser simulation in the portfolio.
 
-[Source snapshots, evidence, and exact simulation boundaries](docs/SOURCE_MAP.md). No invented metrics, employment, rankings, grades, institution, or extra dates. Education is user-confirmed: B.Tech in Computer Science and Engineering, graduated June 2026. No résumé or email link is shown because no valid file or verified address was supplied.
+[Source snapshots, evidence, and exact simulation boundaries](docs/SOURCE_MAP.md). No invented metrics, employment, rankings, grades, institution, or extra dates. Education is user-confirmed: B.Tech in Computer Science and Engineering, graduated June 2026.
 
-Recruiter contact review (October 30, 2026): About links directly to the keyboard-focusable Contact section. GitHub returned HTTP 200, and its public profile links to the exact LinkedIn destination already used here. Direct LinkedIn access was blocked by this environment's proxy, so live availability remains unverified. No résumé PDF is tracked in the repository and no intended public contact email was confirmed in the portfolio, project READMEs, or public GitHub profile. A current PDF and an owner-approved public email are needed before adding those actions.
+Recruiter contact update (October 30, 2026): About provides view/download actions for `/AayushiSinha_Resume.pdf` and links directly to the keyboard-focusable Contact section. The owner-uploaded PDF was moved unchanged from the repository root into `public/`. Contact includes the approved public email `sinhaaayushi19@gmail.com` and location Mumbai, India, alongside the existing GitHub and LinkedIn links. The relative PDF URL will resolve at `https://aayushisinha.vercel.app/AayushiSinha_Resume.pdf` after publication. Direct LinkedIn access was blocked by this environment's proxy in the previous verification, so live availability remains unverified.
 
 ## Structure
 
