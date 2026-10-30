@@ -1,5 +1,58 @@
 # Source-grounded interactive labs
 
+## October 30, 2026 — deployment links and audit corrections
+
+This update supersedes the earlier deployment-link observations below. The owner
+supplied three public destinations, now declared only in
+`lib/project-context.ts` and rendered as external anchors by
+`components/deployment-actions.tsx`:
+
+- Gateway: **Visit Live Store** opens the public storefront; **Open Deployed App ·
+  Login required** opens the separate application's login page. Anonymous access
+  to authenticated features is not promised.
+- Aster & Row: **Launch Live App** opens the real public Streamlit application.
+- Eval Harness remains source-only, with no live-app action.
+
+These pages are distinct from the portfolio simulations. No iframe, API call,
+credentials, login bypass, or backend integration was added. Only owner-supplied
+public pages are linked; no internal-service addresses are added. Independent
+HEAD checks of all three URLs were blocked by the environment proxy with CONNECT
+403, before reaching the destinations. Live availability and login behavior
+remain unverified. Browser link tests stub external navigation and verify the
+destination, new tab, visible login requirement, and keyboard activation only.
+
+The gateway source HEAD was rechecked and still matches the pinned `53e43cdd`
+snapshot documented below:
+
+- `services/woo-mcp/src/tools.ts:64–84`: `sku` and `description` are optional
+  strings; `status` is a string enum with a publish default. The local model now
+  rejects incorrect optional-field types, including an array coerced to a valid
+  status. Accepted product responses still omit description, like `trimProduct`.
+- `services/gateway/src/upstreams.ts:151–166` and
+  `services/gateway/src/chat/agent.ts:147–186`: already-offline upstreams are
+  excluded from discovery. A manually supplied proposal for an undiscovered name
+  follows the error/audit path instead of entering confirmation. No model call is
+  simulated. A previously held write can still fail if approved after an outage;
+  declining a held write only records a decline.
+- Both gateway reset controls now restore the initial scenario, arguments,
+  options, empty results/history, Response inspector, Gateway architecture
+  selection, and copy indicator. Scenario, inspector, and database-node buttons
+  expose their selected state with `aria-pressed`, preserving native keyboard
+  behavior and the existing visual classes.
+
+Regression coverage lives in `tests/demo.test.mjs` and
+`tests/deployment-audit.browser.cjs`. The existing navigation suite is retained.
+Validation: 18 behavior tests, standalone TypeScript, and the production build
+passed. Chromium passed the existing navigation suite and the new desktop/mobile
+regressions, including all seven page/view combinations at 320, 390, 768, 1366,
+and 1440px with no horizontal overflow. Link navigation was stubbed; no live
+backend requests or changes to external applications were made.
+No fixture data, other-project simulation logic, font, color token, or Vercel
+configuration was changed. One scoped flex-wrap rule accommodates the additional
+deployment actions without overflowing the implementation view.
+
+---
+
 Reviewed October 29, 2026. These are educational browser-local demonstrations, not a live connection to any project backend. No credentials are requested, and no request reaches a cluster, WooCommerce, PostgreSQL, Groq, or a model. No API routes or backend services were added. The Next.js server serves the application and its static resources only.
 
 ## MCP Gateway (primary lab)

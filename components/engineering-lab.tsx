@@ -128,6 +128,9 @@ export default function EngineeringLab({
       upstream: p.upstream,
       channel: p.channel,
     });
+    setSelected("gateway");
+    setInspector("Response");
+    setCopied(false);
     resetResult();
   }
   async function execute(decision?: "approve" | "decline") {
@@ -435,18 +438,20 @@ export default function EngineeringLab({
                             <button
                               className="text-button"
                               disabled={busy}
-                              onClick={() => {
-                                choose(0);
-                                setHistory([]);
-                              }}
+                              onClick={resetCurrent}
                             >
                               <RotateCcw size={13} /> Reset lab
                             </button>
                           </div>
-                          <div className="scenario-grid">
+                          <div
+                            className="scenario-grid"
+                            role="group"
+                            aria-label="Request scenarios"
+                          >
                             {presets.map((p, i) => (
                               <button
                                 disabled={busy}
+                                aria-pressed={preset === i}
                                 onClick={() => choose(i)}
                                 className={
                                   "scenario " + (preset === i ? "chosen" : "")
@@ -667,6 +672,7 @@ export default function EngineeringLab({
                                 </div>
                                 <button
                                   onClick={() => setSelected("audit")}
+                                  aria-pressed={selected === "audit"}
                                   className={
                                     "audit-node " +
                                     (selected === "audit" ? "selected" : "")
@@ -814,13 +820,18 @@ export default function EngineeringLab({
                             </section>
                             <section className="panel response-panel">
                               <div className="panel-heading">
-                                <div className="tabs" aria-label="Result views">
+                                <div
+                                  className="tabs"
+                                  role="group"
+                                  aria-label="Result views"
+                                >
                                   {["Response", "Audit", "History"].map((t) => (
                                     <button
                                       className={
                                         inspector === t ? "active" : ""
                                       }
                                       key={t}
+                                      aria-pressed={inspector === t}
                                       onClick={() => setInspector(t)}
                                     >
                                       {t}

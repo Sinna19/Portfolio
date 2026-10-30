@@ -143,9 +143,19 @@ export function simulateGateway(
     outcome,
     error,
   });
+  if (o.channel === "chat" && !decision) {
+    step(
+      "gateway",
+      "Discover available chat tools",
+      o.upstream === "unreachable"
+        ? "The upstream is already offline, so its tools are absent from discovery. This manually proposed name follows the unknown-tool execution path, not write confirmation. No model is called."
+        : "Chat discovers connected, role-permitted tools before a model proposal. This simulation supplies the proposal locally.",
+    );
+  }
   if (
     o.channel === "chat" &&
     o.role === "admin" &&
+    o.upstream === "connected" &&
     ["woo__create_product", "woo__update_order_status"].includes(tool) &&
     !decision
   ) {
@@ -282,11 +292,16 @@ export function simulateGateway(
       typeof args.regular_price !== "string" ||
       !/^\d+(\.\d{1,2})?$/.test(args.regular_price) ||
       (args.status !== undefined &&
-        !["draft", "publish"].includes(String(args.status)))
+        (typeof args.status !== "string" ||
+          !["draft", "publish"].includes(args.status)))
     )
       return validation(
         "Expected name, decimal-string regular_price, and optional draft/publish status",
       );
+    if (args.sku !== undefined && typeof args.sku !== "string")
+      return validation("sku must be a string when provided");
+    if (args.description !== undefined && typeof args.description !== "string")
+      return validation("description must be a string when provided");
     payload = {
       id: 103,
       name: args.name,

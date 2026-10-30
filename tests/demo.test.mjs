@@ -70,6 +70,63 @@ test("direct admin MCP writes do not require chat confirmation", () => {
     "Completed",
   );
 });
+test("an already-offline chat upstream cannot propose a held write", () => {
+  const r = simulateGateway(
+    "woo__create_product",
+    { name: "Test", regular_price: "1.00" },
+    { ...opts, role: "admin", channel: "chat", upstream: "unreachable" },
+  );
+  assert.equal(r.pending, undefined);
+  assert.equal(r.status, "Tool error");
+  assert.equal(r.http, 200);
+  assert.equal(r.response.isError, true);
+  assert.equal(r.audit.source, "chat");
+  assert.equal(r.audit.outcome, "error");
+  assert.equal(r.audit.error, "server 'woo' is unreachable");
+  assert.ok(r.trace.some((t) => t.detail.includes("absent from discovery")));
+  assert.ok(!r.trace.some((t) => t.state === "held" || t.node === "store"));
+});
+test("resuming a previously held write still checks availability, while declining never calls upstream", () => {
+  const args = { name: "Test", regular_price: "1.00" };
+  const o = { ...opts, role: "admin", channel: "chat" };
+  assert.equal(simulateGateway("woo__create_product", args, o).pending, true);
+  const offline = { ...o, upstream: "unreachable" };
+  const approved = simulateGateway("woo__create_product", args, offline, "approve");
+  assert.equal(approved.pending, undefined);
+  assert.equal(approved.audit.error, "server 'woo' is unreachable");
+  const declined = simulateGateway("woo__create_product", args, offline, "decline");
+  assert.equal(declined.audit.outcome, "declined");
+  assert.ok(!declined.trace.some((t) => t.node === "upstream" || t.node === "store"));
+});
+test("create_product rejects invalid optional field types before any simulated store visit", () => {
+  for (const field of ["sku", "description", "status"]) {
+    for (const value of [null, 123, false, [], ["draft"], {}]) {
+      const r = simulateGateway(
+        "woo__create_product",
+        { name: "Test", regular_price: "1.00", [field]: value },
+        { ...opts, role: "admin" },
+      );
+      assert.equal(r.status, "Demo validation error", `${field}: ${JSON.stringify(value)}`);
+      assert.equal(r.response.isError, true);
+      assert.equal(r.audit.error, "tool returned an error");
+      assert.ok(!r.trace.some((t) => t.node === "store"));
+    }
+  }
+});
+test("create_product accepts omitted, empty, and populated optional strings and preserves default status", () => {
+  for (const optional of [{}, { sku: "", description: "" }, { sku: "SAMPLE", description: "Example", status: "draft" }]) {
+    const r = simulateGateway(
+      "woo__create_product",
+      { name: "Test", regular_price: "1.00", ...optional },
+      { ...opts, role: "admin" },
+    );
+    assert.equal(r.status, "Completed");
+    const product = JSON.parse(r.response.content[0].text);
+    assert.equal(product.sku, optional.sku ?? "");
+    assert.equal(product.status, optional.status ?? "publish");
+    assert.equal(product.description, undefined, "real trimProduct also omits description");
+  }
+});
 test("catalog filters and pagination use arguments and never persist writes", () => {
   const r = simulateGateway(
     "woo__list_products",
@@ -166,17 +223,26 @@ test("every project connects browser simulation guidance to deployment status an
   const { projectContext } = await import("../lib/project-context.ts");
   assert.equal(projectContext.length, 3);
   for (const p of projectContext) {
+    const { deploymentLinks, ...implementation } = p;
     assert.equal(p.revision.length, 40);
     assert.ok(p.steps.length === 3 && p.evidence.length >= 3);
     assert.ok(p.architecture.length >= 4 && p.stack.length >= 5);
     assert.ok(p.boundary.length > 60 && p.tradeoff.length > 60);
     assert.doesNotMatch(
-      JSON.stringify(p),
+      JSON.stringify(implementation),
       /https?:\/\/(?!github\.com)|\b\d{1,3}(?:\.\d{1,3}){3}\b|sslip\.io|umk_|gsk_/,
     );
   }
   assert.match(projectContext[0].status, /k3s on an Azure VM/);
-  assert.match(projectContext[1].status, /Streamlit.*unverified/);
+  assert.match(projectContext[1].status, /Public Streamlit/);
+  assert.deepEqual(projectContext.map((p) => p.deploymentLinks), [
+    [
+      { label: "Visit Live Store", url: "https://shop.20.197.63.44.sslip.io/", loginRequired: false },
+      { label: "Open Deployed App", url: "https://app.20.197.63.44.sslip.io/login", loginRequired: true },
+    ],
+    [{ label: "Launch Live App", url: "https://retail-support-ai.streamlit.app/", loginRequired: false }],
+    [],
+  ]);
   assert.match(projectContext[2].status, /Not deployed/);
 });
 

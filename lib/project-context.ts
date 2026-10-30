@@ -4,8 +4,20 @@ export const projectContext = [
     repo: "MCP-Gateway-on-Kubernetes",
     revision: "53e43cdd9006eb9e634873a4e537da4c19deb85f",
     status: "Deployed · k3s on an Azure VM",
+    deploymentLinks: [
+      {
+        label: "Visit Live Store",
+        url: "https://shop.20.197.63.44.sslip.io/",
+        loginRequired: false,
+      },
+      {
+        label: "Open Deployed App",
+        url: "https://app.20.197.63.44.sslip.io/login",
+        loginRequired: true,
+      },
+    ],
     deployment:
-      "The real project runs on a single-node k3s cluster on an Azure VM (VPS). This portfolio never connects to it. Infrastructure addresses and access details are deliberately omitted.",
+      "The real project runs on a single-node k3s cluster on an Azure VM (VPS). Visit Live Store opens the public storefront. Open Deployed App opens a separate application that requires login; anonymous visitors cannot access its authenticated features. Both are separate from the browser-only gateway simulation, which never connects to the deployment.",
     stack: [
       "TypeScript",
       "React dashboard",
@@ -51,9 +63,16 @@ export const projectContext = [
     name: "Aster & Row",
     repo: "aster-row-agent",
     revision: "c0d6ea27fe04bf4c33d2111f6c7baed5e0b54e55",
-    status: "Streamlit application · public URL unverified",
+    status: "Public Streamlit application",
+    deploymentLinks: [
+      {
+        label: "Launch Live App",
+        url: "https://retail-support-ai.streamlit.app/",
+        loginRequired: false,
+      },
+    ],
     deployment:
-      "The actual application uses Streamlit, sharing agent logic with a CLI. The README describes Streamlit Community Cloud hosting, but no public deployment URL could be verified in the repository or its metadata. Explore the source and use this local walkthrough.",
+      "The actual application is publicly deployed on Streamlit, sharing agent logic with a CLI. Launch Live App opens that separate deployment in a new tab. The portfolio walkthrough remains a browser-only simulation and does not connect to the Streamlit application.",
     stack: [
       "Python",
       "Streamlit",
@@ -95,6 +114,7 @@ export const projectContext = [
     repo: "Eval-Harness",
     revision: "461d80d164efb26939d96e712d7386b69956642c",
     status: "Not deployed · source code available",
+    deploymentLinks: [],
     deployment:
       "The real project has not been deployed. It is a Python evaluation suite available through its source code, not a live hosted application. The interactive evaluation simulator runs entirely within this portfolio.",
     stack: [
