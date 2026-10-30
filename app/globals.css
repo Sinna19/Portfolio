@@ -1117,6 +1117,9 @@ blockquote strong {
   gap: 12px;
   margin: 27px 0;
 }
+.implementation .button-row {
+  flex-wrap: wrap;
+}
 .skip {
   position: fixed;
   top: -70px;

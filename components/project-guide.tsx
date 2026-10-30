@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github, Layers3 } from "lucide-react";
 import { projectContext } from "@/lib/project-context";
+import { DeploymentActions } from "@/components/deployment-actions";
 export function Implementation({
   index,
   onTry,
@@ -27,8 +28,8 @@ export function Implementation({
           <div>
             <h3>Actual architecture</h3>
             <p className="input-hint">
-              Logical components and paths from the source. No infrastructure
-              endpoints are exposed.
+              Logical components and paths from the source. Deployment links
+              open public pages; no internal services or credentials are exposed.
             </p>
             <ol className="architecture-list">
               {p.architecture.map((s) => (
@@ -77,6 +78,7 @@ export function Implementation({
           <button className="button primary" onClick={onTry}>
             Try the Interactive Demo
           </button>
+          <DeploymentActions index={index} className="button" />
           <a className="button" href={root} target="_blank" rel="noreferrer">
             <Github size={15} /> Open GitHub repository{" "}
             <ArrowUpRight size={13} />

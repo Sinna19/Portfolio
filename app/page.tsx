@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import GuidedDemo from "@/components/guided-demo";
 import AboutSection from "@/components/about-section";
+import { DeploymentActions } from "@/components/deployment-actions";
 import { projectContext } from "@/lib/project-context";
 import { labHref } from "@/lib/lab-routes";
 import "./showcase.css";
@@ -33,7 +34,7 @@ const products = [
     ],
     note: "A revoked key must stop working even inside an open session. Authentication is checked on every request.",
     status: "Deployed on k3s · Azure VM",
-    demo: "The lab is a simulation; it never connects to the VM.",
+    demo: "The public store and login-required app are separate from the browser simulation. The lab never connects to the VM.",
     tech: ["TypeScript", "MCP", "Kubernetes", "Helm"],
   },
   {
@@ -50,8 +51,8 @@ const products = [
       "Known source-conflict handling",
     ],
     note: "Two official documents can disagree. An explicit conflict registry flags the relevant sections rather than silently picking a winner.",
-    status: "Streamlit app · public URL unverified",
-    demo: "Explore safe fixtures here; no live model is called.",
+    status: projectContext[1].status,
+    demo: "The demo uses safe fixtures; Launch Live App opens the separate Streamlit deployment.",
     tech: ["Python", "Streamlit", "RAG", "scikit-learn"],
   },
   {
@@ -335,6 +336,7 @@ export default function Home() {
                   >
                     Explore Real Implementation <ArrowRight size={14} />
                   </Link>
+                  <DeploymentActions index={i} className="ed-button" />
                 </div>
                 <a
                   className="ed-source"

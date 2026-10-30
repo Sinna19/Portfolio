@@ -29,8 +29,8 @@ The guided experiences reuse the existing simulation engine, sanitized Python-ge
 
 **No project backend is connected.** Gateway data is fictional local demo data, order results replay safe fixtures, and evaluation executes deterministic JavaScript rather than model calls. The Next.js server renders routes and serves application assets only. It does not connect to project infrastructure.
 
-- Gateway: actual deployment is k3s on an Azure VM; no infrastructure addresses or credentials are exposed.
-- Aster & Row: actual application uses Streamlit; no public deployment URL could be verified, so no hosted-app link is shown.
+- Gateway: actual deployment is k3s on an Azure VM. Owner-provided public links open the storefront and a separate login-required application. They do not connect the simulation to the gateway; no credentials or internal-service links are included.
+- Aster & Row: Launch Live App opens the owner-provided public Streamlit deployment, separate from the browser simulation.
 - Eval Harness: not deployed; source code available, with a browser simulation in the portfolio.
 
 [Source snapshots, evidence, and exact simulation boundaries](docs/SOURCE_MAP.md). No invented metrics, employment, rankings, grades, institution, or extra dates. Education is user-confirmed: B.Tech in Computer Science and Engineering, graduated June 2026. No résumé or email link is shown because no valid file or verified address was supplied.
@@ -40,12 +40,13 @@ The guided experiences reuse the existing simulation engine, sanitized Python-ge
 - `app/page.tsx`, `app/showcase.css`: editorial server-rendered homepage and scoped light theme.
 - `components/guided-demo.tsx`: approachable guided interactions reusing the source-grounded model.
 - `components/engineering-lab.tsx`: preserved full client workspace, with URL-based project/view navigation.
-- `lib/demo.ts`, `lib/*-fixtures.json`: unchanged simulation engine and data.
+- `components/deployment-actions.tsx`: shared external deployment actions with visible login requirements and new-tab announcements.
+- `lib/demo.ts`, `lib/*-fixtures.json`: simulation engine and sanitized fixture data.
 - `lib/lab-routes.ts`: project URL mapping, covered by behavior tests.
 - `tests/demo.test.mjs`: original behavior tests plus route mapping coverage.
 - `docs/screenshots/`: actual local desktop/mobile captures for review.
 
-Work is on `feat/editorial-showcase`, based on merged PR #2 in main. Review through the new PR and existing Vercel preview integration; do not merge or change production without owner approval.
+Deployment-link and audit fixes are on `feat/deployment-links-audit-fixes`, based on the latest merged `main`. Review through the focused PR and existing Vercel preview integration; do not merge or change production without owner approval.
 
 ## Browser navigation regression
 
@@ -57,3 +58,12 @@ PLAYWRIGHT_MODULE=playwright CHROMIUM_PATH=/path/to/chromium node tests/navigati
 ```
 
 Browser tooling is optional and is not added to production dependencies. The script captures screenshots in `docs/screenshots/`.
+
+`tests/deployment-audit.browser.cjs` additionally covers the deployment links in
+both views, keyboard new-tab navigation, optional argument validation, offline
+chat writes, approval/decline, selected-state semantics, and both complete reset
+paths. It checks all project views at 320, 390, 768, 1366, and 1440px widths.
+Run it with the same environment variables as the navigation suite. External
+navigation is stubbed, so these checks do not assert live deployment availability.
+All three supplied deployment URLs were blocked by this environment's outbound
+network policy during independent checks; availability remains unverified.
