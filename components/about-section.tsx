@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 export default function AboutSection() {
   return (
     <section
@@ -13,6 +15,9 @@ export default function AboutSection() {
           <em>about me.</em>
         </h2>
         <div className="ed-signature">Aayushi Sinha</div>
+        <a className="ed-source" href="#contact">
+          Get in touch <ArrowRight size={14} aria-hidden="true" />
+        </a>
       </div>
       <div className="about-story">
         <p>

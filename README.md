@@ -35,6 +35,8 @@ The guided experiences reuse the existing simulation engine, sanitized Python-ge
 
 [Source snapshots, evidence, and exact simulation boundaries](docs/SOURCE_MAP.md). No invented metrics, employment, rankings, grades, institution, or extra dates. Education is user-confirmed: B.Tech in Computer Science and Engineering, graduated June 2026. No résumé or email link is shown because no valid file or verified address was supplied.
 
+Recruiter contact review (October 30, 2026): About links directly to the keyboard-focusable Contact section. GitHub returned HTTP 200, and its public profile links to the exact LinkedIn destination already used here. Direct LinkedIn access was blocked by this environment's proxy, so live availability remains unverified. No résumé PDF is tracked in the repository and no intended public contact email was confirmed in the portfolio, project READMEs, or public GitHub profile. A current PDF and an owner-approved public email are needed before adding those actions.
+
 ## Structure
 
 - `app/page.tsx`, `app/showcase.css`: editorial server-rendered homepage and scoped light theme.
