@@ -809,8 +809,10 @@
 }
 .ed-about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-areas: "heading story" "companion story";
+  gap: 32px 70px;
+  align-items: start;
   border-bottom: 1px solid var(--edge);
 }
 .ed-about h2 {
@@ -821,8 +823,9 @@
   color: var(--wine);
   margin-top: 32px;
 }
-.about-story > p {
-  font-size: 12px;
+.about-story > p,
+.about-continuation > p {
+  font-size: 14px;
   line-height: 2;
   color: var(--sub);
   margin: 0 0 20px;
@@ -1355,5 +1358,129 @@
   }
   .product-overview .ed-actions {
     flex-wrap: wrap;
+  }
+}
+
+/* Personal biography: scoped to the existing editorial About section. */
+.ed-about {
+  scroll-margin-top: 28px;
+}
+.about-heading {
+  grid-area: heading;
+}
+.about-story {
+  grid-area: story;
+  min-width: 0;
+  max-width: 620px;
+}
+.about-companion {
+  grid-area: companion;
+  border-top: 1px solid var(--edge);
+  border-bottom: 1px solid var(--edge);
+  padding: 22px 0;
+  max-width: 350px;
+}
+.about-companion > div + div {
+  margin-top: 25px;
+}
+.about-companion h3 {
+  font: 9px/1.8 monospace;
+  letter-spacing: 1.2px;
+  color: var(--wine);
+  margin: 0 0 10px;
+}
+.about-companion p {
+  font-size: 12px;
+  line-height: 2;
+  color: var(--sub);
+  margin: 0;
+}
+.about-companion .about-approach {
+  font:
+    21px/1.6 Georgia,
+    serif;
+  letter-spacing: -0.3px;
+  color: var(--wine);
+}
+.about-more {
+  border-top: 1px solid var(--edge);
+}
+.about-more summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: fit-content;
+  min-width: 115px;
+  min-height: 44px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--wine);
+  padding: 10px 0;
+}
+.about-more summary::-webkit-details-marker {
+  display: none;
+}
+.about-more summary:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+.about-more summary:hover {
+  color: var(--ink);
+}
+.about-read-less {
+  display: none;
+}
+.about-more[open] .about-read-more {
+  display: none;
+}
+.about-more[open] .about-read-less {
+  display: inline;
+}
+.about-disclosure-mark {
+  font: 18px monospace;
+}
+.about-more[open] .about-disclosure-mark {
+  font-size: 0;
+}
+.about-more[open] .about-disclosure-mark::after {
+  content: "−";
+  font-size: 18px;
+}
+.about-continuation {
+  padding-top: 12px;
+}
+.about-continuation > p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 1100px) {
+  .ed-about {
+    column-gap: 40px;
+    row-gap: 28px;
+  }
+}
+@media (max-width: 760px) {
+  .ed-about {
+    grid-template-areas: "heading" "story" "companion";
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  .about-story {
+    max-width: 100%;
+  }
+  .about-companion {
+    max-width: none;
+    padding: 22px 0;
+  }
+  .about-story > p,
+  .about-continuation > p {
+    font-size: 14px;
+    line-height: 1.95;
+  }
+  .about-story > p:first-child {
+    font-size: 16px;
+    line-height: 1.85;
   }
 }

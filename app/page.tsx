@@ -13,6 +13,7 @@ import {
   GitBranch,
 } from "lucide-react";
 import GuidedDemo from "@/components/guided-demo";
+import AboutSection from "@/components/about-section";
 import { projectContext } from "@/lib/project-context";
 import { labHref } from "@/lib/lab-routes";
 import "./showcase.css";
@@ -386,41 +387,7 @@ export default function Home() {
             <p>Browser-only simulations · no credentials required</p>
           </div>
         </section>
-        <section id="about" className="ed-section ed-about">
-          <div>
-            <div className="ed-kicker">THE PERSON BEHIND THE PROJECTS</div>
-            <h2>
-              Curious enough to ask.
-              <br />
-              <em>Hands-on enough to build.</em>
-            </h2>
-            <div className="ed-signature">Aayushi Sinha</div>
-          </div>
-          <div className="about-story">
-            <p>
-              I’m an early-career computer science engineering graduate
-              interested in AI engineering, forward-deployed engineering, and
-              the infrastructure that makes agents useful.
-            </p>
-            <p>
-              I learn by building, debugging, and following a problem through
-              its less convenient parts. My projects range from a gateway
-              deployed on k3s to support-agent grounding and conversation
-              evaluation.
-            </p>
-            <p>
-              I want to understand the tradeoffs well enough to explain them
-              clearly — and build software that makes those decisions visible.
-            </p>
-            <div className="education-note">
-              <span>EDUCATION</span>
-              <strong>B.Tech in Computer Science and Engineering</strong>
-              <p>
-                Graduated <time dateTime="2026-06">June 2026</time>
-              </p>
-            </div>
-          </div>
-        </section>
+        <AboutSection />
         <section className="ed-notes ed-section">
           <div className="ed-section-title">
             <div>
